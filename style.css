@@ -92,10 +92,19 @@ a:visited {
   margin-left: 2px;
 }
 
-#page2text {
+.page2text {
   width: 60%;
   float: left;
   padding: 3rem
+}
+
+.page3text {
+  padding: 3rem;
+}
+
+.page3text img {
+  width: 10em;
+  height: 10em;
 }
 
 .contentheading {
@@ -107,3 +116,201 @@ a:visited {
   max-height: 90vh;
   float: right;
 }
+
+.bajacontentcontainer {
+  padding: 2rem
+}
+
+.columncontainer {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  gap: 1em;
+}
+
+.columncontainer img {
+  width: 100%;
+  padding: 2em 1em 0 0;
+}
+
+.leftcolumn {
+  flex: .7;
+}
+
+.rightcolumn {
+  flex: 2;
+}
+
+.halfshaftscontainer {
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: .2fr .3fr .6fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "img1 content1 content1 content1"
+    "img1 img2 img2 content2"
+    "img1 img3 content3 content3"
+    "img1 img3 content3 content3";
+  gap: 1.5rem;
+}
+.halfshaftscontainer img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.firsthalfshaftimg {
+  grid-area: img1;
+  max-height: 95vh;
+  place-self: center;
+}
+.secondhalfshaftimg {
+  grid-area: img2;
+}
+.thirdhalfshaftimg {
+  grid-area: img3;
+}
+.firsthalfshaftparagraph {
+  grid-area: content1;
+}
+.secondhalfshaftparagraph {
+  grid-area: content2;
+}
+.thirdhalfshaftparagraph {
+  grid-area: content3;
+  width: 100%;
+  height: auto;
+}
+.fourthhalfshaftimg {
+  width: 100%;
+}
+
+.horizontalscroll {
+  padding: 2rem 0;
+  position: relative;
+}
+
+.horizontalscroll::after {
+  content: '';
+  position: absolute; 
+  top: 0;
+  right: 0;
+  width: 100px; 
+  height: 100%; 
+  background: linear-gradient(to right, transparent, rgb(255, 255, 255));
+  pointer-events: none; 
+}
+
+.horizontalscroll img {
+  max-height: 300px;
+  height: 300px;
+  width: 100%;
+  object-fit: cover;   
+}
+
+.contentcontainer{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  gap: 1em;
+  padding-left: 2rem;
+  padding-right: 100px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+  width: 400px;
+  height: 700px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  background-color: #000000;
+  color: #e6e6e6;
+  overflow: auto;
+}
+
+.projectcontent {
+  padding: 1rem;
+  height: 100%;
+}
+
+.company {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  padding-bottom: 1em;
+}
+
+/* small devices */
+@media only screen and (max-width: 900px) {
+  .landingpagebit {
+    width: 100%;
+    padding: 4em;
+  }
+  .page2text {
+    width: 100%;
+    padding: 4em;
+    float:none
+  }
+  #simulation {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    float: none;
+  }
+}
+
+
+
+
+
+
+
+
+/* For every word you want to add, make sure to make the following changes for EACH word: */
+.text-change {
+  position: absolute;
+  opacity: 0;
+  animation: fade 8s infinite; /* add 2s to the middle number here */
+  padding-left: 0.125em;
+}
+
+.text-change:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.text-change:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.text-change:nth-child(3) {
+  animation-delay: 4s;
+}
+/* copy and paste the below code for each word you want to add,
+   and change the nth-child number to the next number in the sequence by following the directions
+   also dont forget to delete the comments i made in the code
+
+
+.text-change:nth-child(3) { <<<<<<< change this number 3 to the next number in the sequence
+  animation-delay: 4s; <<<<<<< change this number 4 to the next number in the sequence of 2s increments
+}
+*/
+.text-change:nth-child(4) {
+  animation-delay: 6s;
+}
+
+@keyframes fade {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  /* if the words start to feel like they are too on top of eachother start to change the below opacities to 0 from bottom to top*/
+  21% { opacity: 1; }
+  22% { opacity: 1; }
+  23% { opacity: 1; }
+  24% { opacity: 1; }
+  25% { opacity: 1; }
+  30% { opacity: 0; } 
+  40% { opacity: 0; }
+  60% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
