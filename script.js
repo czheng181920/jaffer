@@ -5,7 +5,7 @@ const words = ["Brain Implants", "Baja", "Cars", "Wheels"];
 function cycleWords() {
     const textChangeElements = document.querySelectorAll('.text-change');
     
-    textChangeElements.forEach((element, index) => {
+    textChangeElements.forEach((element) => {
         let wordIndex = 0;
         setInterval(() => {
             // Fade out the text

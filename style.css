@@ -263,12 +263,7 @@ a:visited {
   }
 }
 
-.text-container {
-  margin-left: .5rem;
-}
-
 .text-change {
-  position: absolute;
   max-width: 100%;
   white-space: nowrap;
   opacity: 1;
